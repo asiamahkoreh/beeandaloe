@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bee & Aloe — Africa's Nutritional Heritage</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+–earth: #2C1810;
+–gold: #C8952A;
+–gold-light: #E8B84B;
+–cream: #FAF5EC;
+–sage: #6B7B5E;
+–bark: #8B5E3C;
+–off-white: #F5EFE4;
+–text: #1A0F08;
+–muted: #7A6555;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘DM Sans’, sans-serif;
+background: var(–cream);
+color: var(–text);
+overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+display: flex; align-items: center; justify-content: space-between;
+padding: 1.2rem 2rem;
+background: rgba(250,245,236,0.92);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid rgba(200,149,42,0.2);
+}
+.nav-logo {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.5rem; font-weight: 600;
+color: var(–earth); letter-spacing: 0.02em;
+}
+.nav-logo span { color: var(–gold); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em;
+text-transform: uppercase; color: var(–muted); text-decoration: none;
+transition: color 0.2s;
+}
+.nav-links a:hover { color: var(–gold); }
+.nav-cta {
+background: var(–gold); color: white;
+padding: 0.55rem 1.3rem; border-radius: 2px;
+font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em;
+text-transform: uppercase; text-decoration: none;
+transition: background 0.2s;
+}
+.nav-cta:hover { background: var(–earth); }
+
+/* HERO */
+.hero {
+min-height: 100vh;
+display: grid; grid-template-columns: 1fr 1fr;
+align-items: center;
+padding: 6rem 4rem 4rem;
+position: relative; overflow: hidden;
+}
+.hero::before {
+content: ‘’;
+position: absolute; top: 0; right: 0;
+width: 55%; height: 100%;
+background: linear-gradient(135deg, #2C1810 0%, #5C3520 40%, #8B5E3C 70%, #C8952A 100%);
+clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+z-index: 0;
+}
+.hero-text { position: relative; z-index: 1; padding-right: 3rem; }
+.hero-eyebrow {
+font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+color: var(–gold); font-weight: 500; margin-bottom: 1.2rem;
+}
+.hero-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(2.8rem, 5vw, 4.5rem);
+font-weight: 300; line-height: 1.1;
+color: var(–earth); margin-bottom: 1.5rem;
+}
+.hero-title em { font-style: italic; color: var(–gold); }
+.hero-subtitle {
+font-size: 1rem; line-height: 1.7; color: var(–muted);
+max-width: 420px; margin-bottom: 2.5rem;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+background: var(–gold); color: white;
+padding: 0.9rem 2rem; border-radius: 2px;
+font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
+text-transform: uppercase; text-decoration: none;
+transition: all 0.2s; display: inline-block;
+}
+.btn-primary:hover { background: var(–earth); transform: translateY(-1px); }
+.btn-outline {
+border: 1.5px solid var(–earth); color: var(–earth);
+padding: 0.9rem 2rem; border-radius: 2px;
+font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
+text-transform: uppercase; text-decoration: none;
+transition: all 0.2s; display: inline-block;
+}
+.btn-outline:hover { background: var(–earth); color: white; }
+
+.hero-visual {
+position: relative; z-index: 1;
+display: flex; flex-direction: column; align-items: center; justify-content: center;
+padding-left: 3rem;
+}
+.hero-badge {
+background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
+border: 1px solid rgba(255,255,255,0.2);
+border-radius: 4px; padding: 2.5rem;
+text-align: center; color: white;
+}
+.hero-badge-icon { font-size: 3.5rem; margin-bottom: 1rem; display: block; }
+.hero-badge h3 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.8rem; font-weight: 300; margin-bottom: 0.5rem;
+}
+.hero-badge p { font-size: 0.85rem; opacity: 0.8; line-height: 1.5; }
+.hero-stats {
+display: flex; gap: 2rem; margin-top: 1.5rem;
+padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15);
+width: 100%;
+}
+.stat { text-align: center; flex: 1; }
+.stat-num {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 2rem; font-weight: 600; color: var(–gold-light);
+display: block;
+}
+.stat-label { font-size: 0.72rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* MARQUEE */
+.marquee-wrap {
+background: var(–earth); color: var(–gold-light);
+padding: 0.9rem 0; overflow: hidden;
+}
+.marquee-track {
+display: flex; gap: 3rem;
+animation: marquee 20s linear infinite;
+white-space: nowrap;
+}
+.marquee-track span {
+font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+flex-shrink: 0;
+}
+.marquee-track span::before { content: ’✦ ’; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* SECTION SHARED */
+section { padding: 5rem 4rem; }
+.section-label {
+font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+color: var(–gold); font-weight: 500; margin-bottom: 0.8rem;
+}
+.section-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(2rem, 3.5vw, 3rem);
+font-weight: 300; line-height: 1.2; color: var(–earth);
+margin-bottom: 1rem;
+}
+.section-desc { color: var(–muted); line-height: 1.7; max-width: 560px; }
+
+/* CATEGORIES TABS */
+.shop { background: var(–off-white); }
+.shop-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1.5rem; }
+.category-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.tab-btn {
+padding: 0.55rem 1.2rem; border-radius: 2px;
+border: 1.5px solid transparent;
+font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em;
+text-transform: uppercase; cursor: pointer;
+background: white; color: var(–muted);
+transition: all 0.2s;
+}
+.tab-btn.active, .tab-btn:hover {
+background: var(–gold); color: white; border-color: var(–gold);
+}
+
+/* PRODUCT GRID */
+.products-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+gap: 1.2rem;
+}
+.product-card {
+background: white; border-radius: 4px;
+padding: 1.5rem; position: relative;
+transition: all 0.25s; cursor: pointer;
+border: 1px solid transparent;
+}
+.product-card:hover {
+border-color: var(–gold); transform: translateY(-3px);
+box-shadow: 0 8px 24px rgba(200,149,42,0.12);
+}
+.product-category-tag {
+font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+color: var(–gold); font-weight: 500; margin-bottom: 0.6rem;
+}
+.product-name {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.15rem; font-weight: 600; color: var(–earth);
+margin-bottom: 0.3rem; line-height: 1.3;
+}
+.product-weight { font-size: 0.78rem; color: var(–muted); margin-bottom: 1rem; }
+.product-footer { display: flex; align-items: center; justify-content: space-between; }
+.product-price {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.3rem; font-weight: 600; color: var(–gold);
+}
+.product-price span { font-size: 0.75rem; font-family: ‘DM Sans’, sans-serif; color: var(–muted); }
+.add-btn {
+background: var(–earth); color: white;
+border: none; border-radius: 2px;
+padding: 0.45rem 0.9rem; font-size: 0.75rem;
+font-weight: 500; cursor: pointer; letter-spacing: 0.05em;
+transition: background 0.2s;
+}
+.add-btn:hover { background: var(–gold); }
+.product-icon {
+font-size: 1.8rem; margin-bottom: 0.8rem; display: block;
+}
+
+/* WHY US */
+.why { background: var(–cream); }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.why-card {
+padding: 2rem; border-left: 3px solid var(–gold);
+background: white; border-radius: 0 4px 4px 0;
+}
+.why-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+.why-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.2rem; font-weight: 600; color: var(–earth); margin-bottom: 0.5rem;
+}
+.why-desc { font-size: 0.85rem; color: var(–muted); line-height: 1.6; }
+
+/* ORDER FORM */
+.order-section {
+background: var(–earth);
+color: white;
+}
+.order-section .section-title { color: white; }
+.order-section .section-desc { color: rgba(255,255,255,0.6); }
+.order-section .section-label { color: var(–gold-light); }
+.order-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+
+.order-form {
+background: rgba(255,255,255,0.06);
+border: 1px solid rgba(255,255,255,0.1);
+border-radius: 4px; padding: 2.5rem;
+}
+.form-group { margin-bottom: 1.2rem; }
+.form-label {
+display: block; font-size: 0.75rem; letter-spacing: 0.1em;
+text-transform: uppercase; color: rgba(255,255,255,0.6);
+margin-bottom: 0.5rem;
+}
+.form-input, .form-select, .form-textarea {
+width: 100%; padding: 0.8rem 1rem;
+background: rgba(255,255,255,0.08);
+border: 1px solid rgba(255,255,255,0.15);
+border-radius: 2px; color: white;
+font-family: ‘DM Sans’, sans-serif; font-size: 0.9rem;
+transition: border-color 0.2s; outline: none;
+}
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.3); }
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+border-color: var(–gold);
+}
+.form-select { appearance: none; cursor: pointer; }
+.form-select option { background: var(–earth); }
+.form-textarea { resize: vertical; min-height: 100px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.submit-btn {
+width: 100%; padding: 1rem;
+background: var(–gold); color: white; border: none;
+border-radius: 2px; font-family: ‘DM Sans’, sans-serif;
+font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em;
+text-transform: uppercase; cursor: pointer;
+transition: all 0.2s; margin-top: 0.5rem;
+}
+.submit-btn:hover { background: var(–gold-light); transform: translateY(-1px); }
+
+.order-info { }
+.info-block { margin-bottom: 2rem; }
+.info-block h4 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.2rem; font-weight: 600; color: var(–gold-light);
+margin-bottom: 0.8rem;
+}
+.info-block p, .info-block a {
+font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.7;
+text-decoration: none;
+}
+.info-block a:hover { color: var(–gold-light); }
+
+/* WHATSAPP FLOAT */
+.wa-float {
+position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+background: #25D366; color: white;
+width: 60px; height: 60px; border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-size: 1.6rem; text-decoration: none;
+box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+transition: all 0.2s; animation: pulse-wa 2s infinite;
+}
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
+@keyframes pulse-wa {
+0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
+}
+.wa-tooltip {
+position: absolute; right: 72px; top: 50%; transform: translateY(-50%);
+background: var(–earth); color: white; white-space: nowrap;
+padding: 0.4rem 0.8rem; border-radius: 2px;
+font-size: 0.75rem; pointer-events: none;
+opacity: 0; transition: opacity 0.2s;
+}
+.wa-float:hover .wa-tooltip { opacity: 1; }
+
+/* FOOTER */
+footer {
+background: #1A0F08; color: rgba(255,255,255,0.5);
+padding: 2.5rem 4rem;
+display: flex; justify-content: space-between; align-items: center;
+flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.3rem; color: white;
+}
+.footer-logo span { color: var(–gold); }
+footer p { font-size: 0.8rem; }
+
+/* SUCCESS MSG */
+.success-msg {
+display: none; background: rgba(37,211,102,0.15);
+border: 1px solid rgba(37,211,102,0.3);
+border-radius: 4px; padding: 1.2rem;
+color: #25D366; font-size: 0.9rem; text-align: center;
+margin-top: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+nav { padding: 1rem 1.2rem; }
+.nav-links { display: none; }
+.hero { grid-template-columns: 1fr; padding: 5rem 1.5rem 3rem; min-height: auto; }
+.hero::before { width: 100%; clip-path: none; top: auto; bottom: 0; height: 45%; }
+.hero-text { padding-right: 0; margin-bottom: 2rem; }
+.hero-visual { padding-left: 0; }
+section { padding: 3.5rem 1.5rem; }
+.order-layout { grid-template-columns: 1fr; gap: 2rem; }
+.form-row { grid-template-columns: 1fr; }
+footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+.shop-header { flex-direction: column; align-items: flex-start; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <div class="nav-logo">Bee <span>&</span> Aloe</div>
+  <ul class="nav-links">
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#order">Order</a></li>
+  </ul>
+  <a href="#order" class="nav-cta">Order Now</a>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Rooted in Africa's Nutritional Heritage</p>
+    <h1 class="hero-title">
+      Nourish Your Body<br>
+      <em>The Way Nature</em><br>
+      Intended
+    </h1>
+    <p class="hero-subtitle">
+      Premium organic seeds, nuts, powders, and oils — sourced with intention and delivered to your door across Ghana.
+    </p>
+    <div class="hero-actions">
+      <a href="#shop" class="btn-primary">Browse Products</a>
+      <a href="#order" class="btn-outline">Place an Order</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-badge">
+      <span class="hero-badge-icon">🌿</span>
+      <h3>Pure. Natural. Potent.</h3>
+      <p>Every product is carefully selected<br>for quality and nutritional value</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Organic</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">20+</span>
+          <span class="stat-label">Products</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">GH</span>
+          <span class="stat-label">Delivered</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Fenugreek Seeds</span><span>Moringa Powder</span><span>Black Seed Oil</span>
+    <span>Chia Seeds</span><span>Ashwagandha</span><span>Maca Powder</span>
+    <span>Almond Nuts</span><span>Turmeric Powder</span><span>Olive Oil</span>
+    <span>Pumpkin Seeds</span><span>Castor Oil</span><span>Flax Seeds</span>
+    <span>Fenugreek Seeds</span><span>Moringa Powder</span><span>Black Seed Oil</span>
+    <span>Chia Seeds</span><span>Ashwagandha</span><span>Maca Powder</span>
+    <span>Almond Nuts</span><span>Turmeric Powder</span><span>Olive Oil</span>
+    <span>Pumpkin Seeds</span><span>Castor Oil</span><span>Flax Seeds</span>
+  </div>
+</div>
+
+<!-- SHOP -->
+
+<section class="shop" id="shop">
+  <div class="shop-header">
+    <div>
+      <p class="section-label">Our Products</p>
+      <h2 class="section-title">Nature's Finest Selection</h2>
+    </div>
+    <div class="category-tabs">
+      <button class="tab-btn active" onclick="filterProducts('all', this)">All</button>
+      <button class="tab-btn" onclick="filterProducts('seed', this)">Seeds</button>
+      <button class="tab-btn" onclick="filterProducts('nut', this)">Nuts</button>
+      <button class="tab-btn" onclick="filterProducts('powder', this)">Powders</button>
+      <button class="tab-btn" onclick="filterProducts('oil', this)">Oils</button>
+    </div>
+  </div>
+  <div class="products-grid" id="productsGrid"></div>
+</section>
+
+<!-- WHY US -->
+
+<section class="why" id="why">
+  <p class="section-label">Why Bee & Aloe</p>
+  <h2 class="section-title">Restoring What's Always<br>Been Ours</h2>
+  <p class="section-desc">Africa's soil has fed humanity for millennia. We exist to reconnect you with that inheritance.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-icon">🌱</span>
+      <div class="why-title">Pure & Unprocessed</div>
+      <div class="why-desc">No fillers, additives, or artificial anything. What you see is what you get — real food, real nutrition.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">📦</span>
+      <div class="why-title">Fast Delivery</div>
+      <div class="why-desc">Order via WhatsApp or our form and receive your products quickly across Ghana.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">💬</span>
+      <div class="why-title">Personal Service</div>
+      <div class="why-desc">Real people, real guidance. We help you find the right products for your health goals.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">🏆</span>
+      <div class="why-title">Carefully Sourced</div>
+      <div class="why-desc">Every product is selected for potency, freshness, and genuine nutritional benefit.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER SECTION -->
+
+<section class="order-section" id="order">
+  <p class="section-label">Place Your Order</p>
+  <h2 class="section-title">Ready to Order?</h2>
+  <p class="section-desc">Fill the form below and we'll confirm your order via WhatsApp within hours.</p>
+
+  <div class="order-layout">
+    <div class="order-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" placeholder="Full name" id="fname">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-input" placeholder="0XX XXX XXXX" id="fphone">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Product(s) You Want</label>
+        <select class="form-select form-input" id="fproduct">
+          <option value="">— Select a product —</option>
+          <optgroup label="Seeds (200g)">
+            <option>Fenugreek Seed — GHS 70</option>
+            <option>Akpi Seed — GHS 130</option>
+            <option>Sesame Seed — GHS 80</option>
+            <option>Flax Seed — GHS 80</option>
+            <option>Sunflower Seed — GHS 80</option>
+            <option>Pumpkin Seed — GHS 90</option>
+            <option>Chia Seed — GHS 90</option>
+            <option>Fennel Seed — GHS 80</option>
+            <option>Black Seed — GHS 80</option>
+            <option>Dried Cranberry — GHS 120</option>
+          </optgroup>
+          <optgroup label="Nuts (200g)">
+            <option>Almond Nut — GHS 90</option>
+            <option>Walnut — GHS 90</option>
+            <option>Cashew Nut — GHS 90</option>
+          </optgroup>
+          <optgroup label="Powders">
+            <option>Turmeric Powder 200g — GHS 80</option>
+            <option>Moringa Powder 200g — GHS 80</option>
+            <option>Cinnamon Powder 200g — GHS 90</option>
+            <option>Fenugreek Powder 200g — GHS 80</option>
+            <option>Black Seed Powder 200g — GHS 120</option>
+            <option>Maca Powder 400g — GHS 280</option>
+            <option>Maca Powder 150g — GHS 120</option>
+            <option>Ashwagandha 200g — GHS 140</option>
+          </optgroup>
+          <optgroup label="Oils">
+            <option>Olive Oil 100ml — GHS 70</option>
+            <option>Olive Oil 250ml — GHS 120</option>
+            <option>Olive Oil 500ml — GHS 200</option>
+            <option>Black Seed Oil 60ml — GHS 70</option>
+            <option>Black Seed Oil 250ml — GHS 170</option>
+            <option>Castor Oil 60ml — GHS 70</option>
+            <option>Maca Oil 300ml — GHS 280</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Quantity</label>
+          <input type="number" class="form-input" placeholder="1" min="1" id="fqty">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Delivery Area</label>
+          <input type="text" class="form-input" placeholder="e.g. Accra, Kumasi" id="flocation">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Additional Products / Notes</label>
+        <textarea class="form-textarea" placeholder="List any other items or ask us anything..." id="fnotes"></textarea>
+      </div>
+      <button class="submit-btn" onclick="submitOrder()">Send Order via WhatsApp →</button>
+      <div class="success-msg" id="successMsg">
+        ✓ Redirecting you to WhatsApp to confirm your order...
+      </div>
+    </div>
+
+
+<div class="order-info">
+  <div class="info-block">
+    <h4>💬 Chat With Us Directly</h4>
+    <p>Prefer to message us directly? Tap the WhatsApp button on screen or send us a message and we'll help you pick the right products.</p>
+  </div>
+  <div class="info-block">
+    <h4>📍 Based in Ghana</h4>
+    <p>We deliver across Ghana. Let us know your location when ordering and we'll arrange delivery to you.</p>
+  </div>
+  <div class="info-block">
+    <h4>💳 Payment</h4>
+    <p>We accept MTN MoMo, Telecel Cash, and cash on delivery. Payment details shared on order confirmation.</p>
+  </div>
+  <div class="info-block">
+    <h4>📞 Contact</h4>
+    <a href="https://wa.me/233531470714" target="_blank">WhatsApp: 0531 470 714</a><br>
+    <p>MoMo: 0531 470 714 (Asiamah Koreh)</p>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">Bee <span>&</span> Aloe</div>
+  <p>© 2025 Bee & Aloe. All rights reserved. Ghana.</p>
+  <p>Restoring Africa's Nutritional Heritage</p>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+
+<a href="https://wa.me/233531470714?text=Hi%2C%20I%20want%20to%20order%20from%20Bee%20%26%20Aloe" target="_blank" class="wa-float">
+  <span class="wa-tooltip">Chat on WhatsApp</span>
+  💬
+</a>
+
+<script>
+const products = [
+  { name: "Fenugreek Seed", cat: "seed", price: 70, weight: "200g", icon: "🌾" },
+  { name: "Akpi Seed", cat: "seed", price: 130, weight: "200g", icon: "🫘" },
+  { name: "Sesame Seed", cat: "seed", price: 80, weight: "200g", icon: "🌿" },
+  { name: "Flax Seed", cat: "seed", price: 80, weight: "200g", icon: "🌱" },
+  { name: "Sunflower Seed", cat: "seed", price: 80, weight: "200g", icon: "🌻" },
+  { name: "Pumpkin Seed", cat: "seed", price: 90, weight: "200g", icon: "🎃" },
+  { name: "Chia Seed", cat: "seed", price: 90, weight: "200g", icon: "⚫" },
+  { name: "Fennel Seed", cat: "seed", price: 80, weight: "200g", icon: "🌿" },
+  { name: "Black Seed", cat: "seed", price: 80, weight: "200g", icon: "🖤" },
+  { name: "Dried Cranberry", cat: "seed", price: 120, weight: "200g", icon: "🫐" },
+  { name: "Almond Nut", cat: "nut", price: 90, weight: "200g", icon: "🥜" },
+  { name: "Walnut", cat: "nut", price: 90, weight: "200g", icon: "🌰" },
+  { name: "Cashew Nut", cat: "nut", price: 90, weight: "200g", icon: "🥜" },
+  { name: "Turmeric Powder", cat: "powder", price: 80, weight: "200g", icon: "🟡" },
+  { name: "Moringa Powder", cat: "powder", price: 80, weight: "200g", icon: "💚" },
+  { name: "Cinnamon Powder", cat: "powder", price: 90, weight: "200g", icon: "🟤" },
+  { name: "Fenugreek Powder", cat: "powder", price: 80, weight: "200g", icon: "🌾" },
+  { name: "Black Seed Powder", cat: "powder", price: 120, weight: "200g", icon: "🖤" },
+  { name: "Maca Powder", cat: "powder", price: 280, weight: "400g", icon: "🤍" },
+  { name: "Maca Powder", cat: "powder", price: 120, weight: "150g", icon: "🤍" },
+  { name: "Ashwagandha", cat: "powder", price: 140, weight: "200g", icon: "🌿" },
+  { name: "Olive Oil", cat: "oil", price: 70, weight: "100ml", icon: "🫒" },
+  { name: "Olive Oil", cat: "oil", price: 120, weight: "250ml", icon: "🫒" },
+  { name: "Olive Oil", cat: "oil", price: 200, weight: "500ml", icon: "🫒" },
+  { name: "Black Seed Oil", cat: "oil", price: 70, weight: "60ml", icon: "🖤" },
+  { name: "Black Seed Oil", cat: "oil", price: 170, weight: "250ml", icon: "🖤" },
+  { name: "Castor Oil", cat: "oil", price: 70, weight: "60ml", icon: "💧" },
+  { name: "Maca Oil", cat: "oil", price: 280, weight: "300ml", icon: "✨" },
+];
+
+const catLabels = { seed: "Seeds", nut: "Nuts", powder: "Powder", oil: "Oil" };
+
+function renderProducts(filter = 'all') {
+  const grid = document.getElementById('productsGrid');
+  const filtered = filter === 'all' ? products : products.filter(p => p.cat === filter);
+  grid.innerHTML = filtered.map(p => `
+    <div class="product-card">
+      <span class="product-icon">${p.icon}</span>
+      <div class="product-category-tag">${catLabels[p.cat]}</div>
+      <div class="product-name">${p.name}</div>
+      <div class="product-weight">${p.weight}</div>
+      <div class="product-footer">
+        <div class="product-price">GHS ${p.price} <span>/ pack</span></div>
+        <button class="add-btn" onclick="orderProduct('${p.name} ${p.weight} — GHS ${p.price}')">Order</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(cat);
+}
+
+function orderProduct(product) {
+  document.getElementById('fproduct').value = '';
+  document.querySelector('#order').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => {
+    document.getElementById('fnotes').value = product;
+  }, 600);
+}
+
+function submitOrder() {
+  const name = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('fphone').value.trim();
+  const product = document.getElementById('fproduct').value;
+  const qty = document.getElementById('fqty').value;
+  const location = document.getElementById('flocation').value.trim();
+  const notes = document.getElementById('fnotes').value.trim();
+
+  if (!name || !phone) {
+    alert('Please enter your name and phone number.');
+    return;
+  }
+
+  const msg = Hello Bee & Aloe 🌿\n\nI'd like to place an order:\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📦 Product: ${product || 'See notes'}\n🔢 Qty: ${qty || 1}\n📍 Location: ${location || 'To discuss'}\n📝 Notes: ${notes || 'None'}\n\nPlease confirm my order. Thank you!;
+
+  document.getElementById('successMsg').style.display = 'block';
+  setTimeout(() => {
+    window.open(https://wa.me/233531470714?text=${encodeURIComponent(msg)}, '_blank');
+  }, 800);
+}
+
+renderProducts();
+</script>
+
+</body>
+</html>
