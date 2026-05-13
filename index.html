@@ -1,8 +1,3 @@
-# Bee & Aloe Complete HTML File with WhatsApp Order Form
-
-Save this as `index.html`
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +5,6 @@ Save this as `index.html`
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Bee & Aloe — Natural Seeds, Nuts, Powders & Oils</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -27,437 +21,473 @@ Save this as `index.html`
   --border:rgba(0,0,0,0.08);
   --card:#FFFFFF;
 }
-
 html{scroll-behavior:smooth}
-body{
-  font-family:'DM Sans',sans-serif;
-  background:var(--cream);
-  color:var(--text);
-  overflow-x:hidden;
-}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.6;overflow-x:hidden}
 
-nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(253,250,244,0.92);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-  padding:1rem 2rem;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.nav-logo{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.6rem;
-  color:var(--green);
-  text-decoration:none;
-  font-weight:600;
-}
-
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(253,250,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0.9rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--green);letter-spacing:-0.01em;text-decoration:none}
 .nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{background:var(--green);color:#fff;padding:0.5rem 1.25rem;border-radius:50px;font-size:13.5px;font-weight:500;text-decoration:none;transition:background 0.2s}
+.nav-cta:hover{background:var(--green-mid)}
 
-.nav-links{
-  display:flex;
-  gap:1.5rem;
-  list-style:none;
-}
+/* ── HERO ── */
+.hero{min-height:88vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;padding:4rem 3rem 4rem 3.5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 80% 50%,var(--gold-pale) 0%,transparent 65%),radial-gradient(ellipse 40% 50% at 10% 80%,var(--green-light) 0%,transparent 60%);pointer-events:none}
+.hero-content{position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-pale);border:1px solid rgba(200,146,42,0.3);color:var(--gold);font-size:12px;font-weight:500;padding:0.35rem 1rem;border-radius:50px;margin-bottom:1.5rem;letter-spacing:0.03em}
+.hero-badge::before{content:'🌿';font-size:14px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:600;line-height:1.1;color:var(--green);letter-spacing:-0.02em;margin-bottom:1.25rem}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p{font-size:1.05rem;color:var(--muted);max-width:420px;line-height:1.75;margin-bottom:2rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--green);color:#fff;padding:0.8rem 2rem;border-radius:50px;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.25s;display:inline-block}
+.btn-primary:hover{background:var(--green-mid);transform:translateY(-1px)}
+.btn-ghost{border:1.5px solid var(--green);color:var(--green);padding:0.8rem 2rem;border-radius:50px;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.25s;display:inline-block}
+.btn-ghost:hover{background:var(--green-light)}
+.hero-visual{position:relative;z-index:1;display:flex;align-items:center;justify-content:center}
+.hero-honeycomb{display:grid;grid-template-columns:repeat(3,90px);grid-template-rows:repeat(3,90px);gap:8px;transform:rotate(-8deg)}
+.hex{width:90px;height:90px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:28px;background:var(--card);border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,0.06);transition:transform 0.3s}
+.hex:hover{transform:scale(1.08)}
+.hex span{font-size:10px;font-weight:500;color:var(--muted);margin-top:4px}
+.hex.gold{background:linear-gradient(135deg,var(--gold-pale),#FFF8E6);border-color:rgba(200,146,42,0.25)}
+.hex.green{background:linear-gradient(135deg,var(--green-light),#EEF4EC);border-color:rgba(45,90,39,0.15)}
+.hex.empty{background:transparent;border:none;box-shadow:none}
 
-.nav-links a{
-  text-decoration:none;
-  color:var(--muted);
-}
+/* ── STATS BAR ── */
+.stats{background:var(--green);padding:1.25rem 3rem;display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:1rem}
+.stat{text-align:center;color:#fff}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--gold-light);display:block}
+.stat-label{font-size:12px;opacity:0.8;letter-spacing:0.03em}
+.stat-divider{width:1px;height:36px;background:rgba(255,255,255,0.2)}
 
-.nav-cta{
-  background:var(--green);
-  color:#fff;
-  text-decoration:none;
-  padding:0.7rem 1.4rem;
-  border-radius:50px;
-}
+/* ── SECTION COMMONS ── */
+.section{padding:4.5rem 3rem}
+.section-tag{font-size:11.5px;font-weight:500;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;color:var(--green);letter-spacing:-0.02em;margin-bottom:0.6rem}
+.section-sub{color:var(--muted);max-width:480px;line-height:1.7;margin-bottom:2.5rem}
 
-.hero{
-  min-height:85vh;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:2rem;
-  padding:4rem 3rem;
-}
+/* ── PRODUCT GRID ── */
+.products-section{background:var(--cream)}
+.category-nav{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.cat-btn{padding:0.45rem 1.1rem;border-radius:50px;font-size:13px;font-weight:500;border:1.5px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;transition:all 0.2s}
+.cat-btn.active,.cat-btn:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:1rem}
+.product-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.25rem;transition:all 0.25s;cursor:pointer;position:relative;overflow:hidden}
+.product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--green));opacity:0;transition:opacity 0.25s}
+.product-card:hover{box-shadow:0 8px 28px rgba(0,0,0,0.1);transform:translateY(-3px)}
+.product-card:hover::before{opacity:1}
+.product-emoji{font-size:32px;margin-bottom:0.75rem;display:block}
+.product-name{font-size:13.5px;font-weight:500;color:var(--text);margin-bottom:0.25rem;line-height:1.3}
+.product-size{font-size:11.5px;color:var(--muted);margin-bottom:0.75rem}
+.product-price{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--gold)}
+.product-price span{font-size:11px;font-family:'DM Sans',sans-serif;font-weight:400;color:var(--muted)}
+.product-order{display:inline-flex;align-items:center;gap:5px;margin-top:0.75rem;background:var(--green-light);color:var(--green);font-size:12px;font-weight:500;padding:0.3rem 0.8rem;border-radius:50px;text-decoration:none;transition:all 0.2s}
+.product-order:hover{background:var(--green);color:#fff}
 
-.hero h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:4rem;
-  color:var(--green);
-  line-height:1.1;
-  margin-bottom:1rem;
-}
+/* ── WHY US ── */
+.why-section{background:var(--green-pale)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+.why-card{background:#fff;border-radius:16px;padding:1.75rem;border:1px solid var(--border)}
+.why-icon{font-size:30px;margin-bottom:1rem;display:block}
+.why-title{font-size:15px;font-weight:500;color:var(--green);margin-bottom:0.4rem}
+.why-text{font-size:13.5px;color:var(--muted);line-height:1.6}
 
-.hero h1 em{color:var(--gold)}
+/* ── ORDER SECTION ── */
+.order-section{background:linear-gradient(135deg,var(--green) 0%,var(--green-mid) 100%);padding:4.5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.order-section::before{content:'🍯';position:absolute;font-size:200px;opacity:0.06;top:-30px;right:-20px;line-height:1}
+.order-section::after{content:'🌿';position:absolute;font-size:160px;opacity:0.06;bottom:-20px;left:-10px;line-height:1}
+.order-section h2{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color:#fff;margin-bottom:0.75rem;letter-spacing:-0.02em;position:relative;z-index:1}
+.order-section p{color:rgba(255,255,255,0.8);max-width:460px;margin:0 auto 2rem;line-height:1.7;position:relative;z-index:1}
+.order-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn-gold{background:var(--gold);color:#fff;padding:0.85rem 2.2rem;border-radius:50px;font-size:14.5px;font-weight:500;text-decoration:none;transition:all 0.25s;display:inline-block}
+.btn-gold:hover{background:var(--gold-light);color:var(--text);transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--green);padding:0.85rem 2.2rem;border-radius:50px;font-size:14.5px;font-weight:500;text-decoration:none;transition:all 0.25s;display:inline-block}
+.btn-white:hover{background:var(--gold-pale);transform:translateY(-2px)}
+.order-note{color:rgba(255,255,255,0.6);font-size:12.5px;margin-top:1.25rem;position:relative;z-index:1}
 
-.hero p{
-  color:var(--muted);
-  line-height:1.8;
-  margin-bottom:2rem;
-  max-width:500px;
-}
+/* ── FOOTER ── */
+footer{background:var(--text);color:rgba(255,255,255,0.7);padding:2.5rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#fff;font-weight:600}
+.footer-logo span{color:var(--gold-light)}
+.footer-copy{font-size:12.5px;margin-top:0.3rem}
+.footer-links{display:flex;gap:1.5rem;list-style:none}
+.footer-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold-light)}
 
-.btn-primary,.btn-ghost{
-  display:inline-block;
-  padding:0.85rem 1.8rem;
-  border-radius:50px;
-  text-decoration:none;
-  margin-right:1rem;
-}
+/* ── WHATSAPP FLOAT ── */
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.45);z-index:999;transition:transform 0.2s;text-decoration:none}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
 
-.btn-primary{
-  background:var(--green);
-  color:#fff;
-}
-
-.btn-ghost{
-  border:1px solid var(--green);
-  color:var(--green);
-}
-
-.hero-visual{
-  display:flex;
-  justify-content:center;
-}
-
-.hero-boxes{
-  display:grid;
-  grid-template-columns:repeat(3,90px);
-  gap:10px;
-}
-
-.box{
-  width:90px;
-  height:90px;
-  background:#fff;
-  border-radius:18px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-}
-
-.section{
-  padding:4rem 3rem;
-}
-
-.section-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:2.5rem;
-  color:var(--green);
-  margin-bottom:1rem;
-}
-
-.products-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:1rem;
-}
-
-.product-card{
-  background:#fff;
-  border-radius:18px;
-  padding:1.3rem;
-  border:1px solid var(--border);
-}
-
-.product-card h3{
-  margin:0.7rem 0;
-}
-
-.product-price{
-  color:var(--gold);
-  font-size:1.4rem;
-  font-family:'Cormorant Garamond',serif;
-}
-
-.product-order{
-  display:inline-block;
-  margin-top:1rem;
-  background:var(--green-light);
-  color:var(--green);
-  text-decoration:none;
-  padding:0.5rem 1rem;
-  border-radius:40px;
-}
-
-.order-section{
-  background:linear-gradient(135deg,var(--green),var(--green-mid));
-  color:#fff;
-  text-align:center;
-  padding:4rem 2rem;
-}
-
-.order-section h2{
-  font-family:'Cormorant Garamond',serif;
-  font-size:3rem;
-  margin-bottom:1rem;
-}
-
-.order-form-wrap{
-  max-width:750px;
-  margin:2rem auto 0;
-  background:rgba(255,255,255,0.08);
-  border-radius:24px;
-  padding:2rem;
-}
-
-.order-form{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:1rem;
-}
-
-.order-form .full{
-  grid-column:1/-1;
-}
-
-.order-form input,
-.order-form select,
-.order-form textarea{
-  width:100%;
-  padding:1rem;
-  border:none;
-  border-radius:14px;
-  font-size:14px;
-}
-
-.order-form textarea{
-  min-height:120px;
-  resize:none;
-}
-
-.order-submit{
-  border:none;
-  background:var(--gold);
-  color:#fff;
-  padding:1rem;
-  border-radius:50px;
-  cursor:pointer;
-  font-weight:600;
-}
-
-footer{
-  background:#111;
-  color:#fff;
-  padding:2rem;
-  text-align:center;
-}
-
-.wa-float{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  width:60px;
-  height:60px;
-  background:#25D366;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-decoration:none;
-  color:#fff;
-  font-size:30px;
-}
-
+/* ── RESPONSIVE ── */
 @media(max-width:768px){
-  .hero{
-    grid-template-columns:1fr;
-    padding:3rem 1.5rem;
-  }
-
-  .hero h1{
-    font-size:2.8rem;
-  }
-
-  .hero-visual{
-    display:none;
-  }
-
-  .order-form{
-    grid-template-columns:1fr;
-  }
-
-  .nav-links{
-    display:none;
-  }
+  .hero{grid-template-columns:1fr;min-height:auto;padding:3rem 1.5rem}
+  .hero-visual{display:none}
+  .hero h1{font-size:2.6rem}
+  .stats{padding:1.25rem 1.5rem}
+  .stat-divider{display:none}
+  .section{padding:3rem 1.5rem}
+  .order-section{padding:3rem 1.5rem}
+  footer{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem}
+  nav{padding:0.9rem 1.25rem}
+  .nav-links{display:none}
 }
+
+/* ── PRODUCT FILTER ── */
+.product-card[data-cat]{display:block}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">Bee <span>&</span> Aloe</a>
-
   <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#order">Order</a></li>
+  </ul>
+  <a href="https://wa.me/233000000000" class="nav-cta">Order via WhatsApp</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">100% Natural · Ghana</div>
+    <h1>Nature's finest,<br><em>delivered to you.</em></h1>
+    <p>Premium seeds, nuts, powders and oils — carefully sourced for your health and wellness. Simple ordering, fast delivery, honest prices.</p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">Shop all products</a>
+      <a href="#order" class="btn-ghost">How to order</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-honeycomb">
+      <div class="hex gold">🌻<span>Seeds</span></div>
+      <div class="hex green">🌿<span>Powders</span></div>
+      <div class="hex gold">🫒<span>Oils</span></div>
+      <div class="hex green">🥜<span>Nuts</span></div>
+      <div class="hex gold" style="background:linear-gradient(135deg,#FDF3DC,#FFF8E6);border-color:rgba(200,146,42,0.3)">🍯<span>Natural</span></div>
+      <div class="hex green">🌱<span>Fresh</span></div>
+      <div class="hex gold">⚫<span>Black Seed</span></div>
+      <div class="hex green">🫚<span>Pure</span></div>
+      <div class="hex gold">🌾<span>Organic</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Seed Varieties</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat"><span class="stat-num">3</span><span class="stat-label">Nut Types</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat"><span class="stat-num">8+</span><span class="stat-label">Powders & Superfoods</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Premium Oils</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat"><span class="stat-num">MoMo</span><span class="stat-label">Easy Payment</span></div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="section products-section" id="products">
+  <div class="section-tag">Our Products</div>
+  <h2 class="section-title">Shop by category</h2>
+  <p class="section-sub">All products are 200g unless stated. Order via WhatsApp and pay with MTN MoMo or Vodafone Cash.</p>
+
+  <div class="category-nav">
+    <button class="cat-btn active" onclick="filterCat('all',this)">All Products</button>
+    <button class="cat-btn" onclick="filterCat('seed',this)">🌻 Seeds</button>
+    <button class="cat-btn" onclick="filterCat('nut',this)">🥜 Nuts</button>
+    <button class="cat-btn" onclick="filterCat('powder',this)">🌿 Powders</button>
+    <button class="cat-btn" onclick="filterCat('oil',this)">🫒 Oils</button>
+  </div>
+
+  <div class="products-grid" id="productGrid">
+
+    <!-- SEEDS -->
+    <div class="product-card" data-cat="seed">
+      <span class="product-emoji">🌿</span>
+      <div class="product-name">Fenugreek Seed</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 70 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Fenugreek Seed (200g) - GHS 70" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="seed">
+      <span class="product-emoji">🌰</span>
+      <div class="product-name">Akpi Seed</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 130 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Akpi Seed (200g) - GHS 130" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="seed">
+      <span class="product-emoji">🤍</span>
+      <div class="product-name">Sesame Seed</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 80 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Sesame Seed (200g) - GHS 80" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="seed">
+      <span class="product-emoji">🌾</span>
+      <div class="product-name">Flax Seed</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 80 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Flax Seed (200g) - GHS 80" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="seed">
+      <span class="product-emoji">🌻</span>
+      <div class="product-name">Sunflower Seed</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 80 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Sunflower Seed (200g) - GHS 80" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="seed">
+      <span class="product-emoji">🎃</span>
+      <div class="product-name">Pumpkin Seed</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 90 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Pumpkin Seed (200g) - GHS 90" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="seed">
+      <span class="product-emoji">🖤</span>
+      <div class="product-name">Chia Seed</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 90 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Chia Seed (200g) - GHS 90" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="seed">
+      <span class="product-emoji">🌱</span>
+      <div class="product-name">Fennel Seed</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 80 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Fennel Seed (200g) - GHS 80" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="seed">
+      <span class="product-emoji">⚫</span>
+      <div class="product-name">Black Seed</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 80 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Black Seed (200g) - GHS 80" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="seed">
+      <span class="product-emoji">🍒</span>
+      <div class="product-name">Dried Cranberry</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 120 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Dried Cranberry (200g) - GHS 120" class="product-order">Order →</a>
+    </div>
+
+    <!-- NUTS -->
+    <div class="product-card" data-cat="nut">
+      <span class="product-emoji">🥜</span>
+      <div class="product-name">Almond Nut</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 90 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Almond Nut (200g) - GHS 90" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="nut">
+      <span class="product-emoji">🌰</span>
+      <div class="product-name">Walnut</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 90 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Walnut (200g) - GHS 90" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="nut">
+      <span class="product-emoji">🥛</span>
+      <div class="product-name">Cashew Nut</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 90 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Cashew Nut (200g) - GHS 90" class="product-order">Order →</a>
+    </div>
+
+    <!-- POWDERS -->
+    <div class="product-card" data-cat="powder">
+      <span class="product-emoji">💛</span>
+      <div class="product-name">Turmeric Powder</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 80 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Turmeric Powder (200g) - GHS 80" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="powder">
+      <span class="product-emoji">🌿</span>
+      <div class="product-name">Moringa Powder</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 80 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Moringa Powder (200g) - GHS 80" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="powder">
+      <span class="product-emoji">🤎</span>
+      <div class="product-name">Cinnamon Powder</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 90 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Cinnamon Powder (200g) - GHS 90" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="powder">
+      <span class="product-emoji">🌾</span>
+      <div class="product-name">Fenugreek Powder</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 80 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Fenugreek Powder (200g) - GHS 80" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="powder">
+      <span class="product-emoji">⚫</span>
+      <div class="product-name">Black Seed Powder</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 120 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Black Seed Powder (200g) - GHS 120" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="powder">
+      <span class="product-emoji">🌺</span>
+      <div class="product-name">Maca Powder</div>
+      <div class="product-size">400g</div>
+      <div class="product-price">GHS 280 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Maca Powder (400g) - GHS 280" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="powder">
+      <span class="product-emoji">🌺</span>
+      <div class="product-name">Maca Powder</div>
+      <div class="product-size">150g</div>
+      <div class="product-price">GHS 120 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Maca Powder (150g) - GHS 120" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="powder">
+      <span class="product-emoji">🌙</span>
+      <div class="product-name">Ashwagandha</div>
+      <div class="product-size">200g</div>
+      <div class="product-price">GHS 140 <span>/ pack</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Ashwagandha (200g) - GHS 140" class="product-order">Order →</a>
+    </div>
+
+    <!-- OILS -->
+    <div class="product-card" data-cat="oil">
+      <span class="product-emoji">🫒</span>
+      <div class="product-name">Olive Oil</div>
+      <div class="product-size">100ml</div>
+      <div class="product-price">GHS 70 <span>/ bottle</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Olive Oil (100ml) - GHS 70" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="oil">
+      <span class="product-emoji">🫒</span>
+      <div class="product-name">Olive Oil</div>
+      <div class="product-size">250ml</div>
+      <div class="product-price">GHS 120 <span>/ bottle</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Olive Oil (250ml) - GHS 120" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="oil">
+      <span class="product-emoji">🫒</span>
+      <div class="product-name">Olive Oil</div>
+      <div class="product-size">500ml</div>
+      <div class="product-price">GHS 200 <span>/ bottle</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Olive Oil (500ml) - GHS 200" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="oil">
+      <span class="product-emoji">⚫</span>
+      <div class="product-name">Black Seed Oil</div>
+      <div class="product-size">60ml</div>
+      <div class="product-price">GHS 70 <span>/ bottle</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Black Seed Oil (60ml) - GHS 70" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="oil">
+      <span class="product-emoji">⚫</span>
+      <div class="product-name">Black Seed Oil</div>
+      <div class="product-size">250ml</div>
+      <div class="product-price">GHS 170 <span>/ bottle</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Black Seed Oil (250ml) - GHS 170" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="oil">
+      <span class="product-emoji">🤍</span>
+      <div class="product-name">Castor Oil</div>
+      <div class="product-size">60ml</div>
+      <div class="product-price">GHS 70 <span>/ bottle</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Castor Oil (60ml) - GHS 70" class="product-order">Order →</a>
+    </div>
+    <div class="product-card" data-cat="oil">
+      <span class="product-emoji">🌺</span>
+      <div class="product-name">Maca Oil</div>
+      <div class="product-size">300ml</div>
+      <div class="product-price">GHS 280 <span>/ bottle</span></div>
+      <a href="https://wa.me/233000000000?text=I'd like to order Maca Oil (300ml) - GHS 280" class="product-order">Order →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why-section" id="why">
+  <div class="section-tag">Why Bee & Aloe</div>
+  <h2 class="section-title">Wellness made simple</h2>
+  <p class="section-sub">We source quality natural products and make it easy for you to get them.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-icon">🌿</span>
+      <div class="why-title">100% Natural</div>
+      <div class="why-text">No additives, no fillers. Every product is as nature intended — pure and wholesome.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">📦</span>
+      <div class="why-title">Carefully Packed</div>
+      <div class="why-text">Products are weighed and packed fresh. You get exactly what you order, every time.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">📱</span>
+      <div class="why-title">Order via WhatsApp</div>
+      <div class="why-text">No complicated checkout. Just message us, confirm your order and pay via MoMo.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">💛</span>
+      <div class="why-title">Honest Prices</div>
+      <div class="why-text">Clear, fair pricing with no hidden costs. What you see on the site is what you pay.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER SECTION -->
+<section class="order-section" id="order">
+  <h2>Ready to order?</h2>
+  <p>Browse our products, pick what you need and send us a WhatsApp message. We'll confirm your order and send MoMo payment details within minutes.</p>
+  <div class="order-actions">
+    <a href="https://wa.me/233000000000" class="btn-gold">💬 WhatsApp us now</a>
+    <a href="#products" class="btn-white">Browse products</a>
+  </div>
+  <p class="order-note">Payment via MTN MoMo · Vodafone Cash · Fast, friendly service</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Bee <span>&</span> Aloe</div>
+    <div class="footer-copy">Natural Seeds · Nuts · Powders · Oils · Ghana · © 2025</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="https://wa.me/233000000000">WhatsApp</a></li>
     <li><a href="#products">Products</a></li>
     <li><a href="#order">Order</a></li>
   </ul>
-
-  <a href="tel:0531470714" class="nav-cta">📞 Call: 0531470714</a>
-</nav>
-
-<section class="hero">
-  <div>
-    <h1>Nature's finest,<br><em>delivered to you.</em></h1>
-
-    <p>
-      Premium seeds, nuts, powders and oils carefully sourced for your health and wellness.
-    </p>
-
-    <a href="#products" class="btn-primary">Shop Products</a>
-    <a href="#order" class="btn-ghost">Place Order</a>
-  </div>
-
-  <div class="hero-visual">
-    <div class="hero-boxes">
-      <div class="box">🌻<small>Seeds</small></div>
-      <div class="box">🌿<small>Powders</small></div>
-      <div class="box">🫒<small>Oils</small></div>
-      <div class="box">🥜<small>Nuts</small></div>
-      <div class="box">🍯<small>Natural</small></div>
-      <div class="box">🌱<small>Organic</small></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="products">
-  <h2 class="section-title">Popular Products</h2>
-
-  <div class="products-grid">
-
-    <div class="product-card">
-      <div style="font-size:40px">🌿</div>
-      <h3>Fenugreek Seed</h3>
-      <p>200g</p>
-      <div class="product-price">GHS 70</div>
-      <a class="product-order" href="https://wa.me/233531470714?text=I'd like to order Fenugreek Seed">Order Now</a>
-    </div>
-
-    <div class="product-card">
-      <div style="font-size:40px">🥜</div>
-      <h3>Almond Nut</h3>
-      <p>200g</p>
-      <div class="product-price">GHS 90</div>
-      <a class="product-order" href="https://wa.me/233531470714?text=I'd like to order Almond Nut">Order Now</a>
-    </div>
-
-    <div class="product-card">
-      <div style="font-size:40px">🌿</div>
-      <h3>Moringa Powder</h3>
-      <p>200g</p>
-      <div class="product-price">GHS 80</div>
-      <a class="product-order" href="https://wa.me/233531470714?text=I'd like to order Moringa Powder">Order Now</a>
-    </div>
-
-    <div class="product-card">
-      <div style="font-size:40px">🫒</div>
-      <h3>Olive Oil</h3>
-      <p>100ml</p>
-      <div class="product-price">GHS 70</div>
-      <a class="product-order" href="https://wa.me/233531470714?text=I'd like to order Olive Oil">Order Now</a>
-    </div>
-
-  </div>
-</section>
-
-<section class="order-section" id="order">
-  <h2>Ready to order?</h2>
-
-  <p>
-    Fill the form below and your order will automatically open in WhatsApp.<br><br>
-    📞 Prefer calling? Call us directly on <strong>0531470714</strong>
-  </p>
-
-  <div class="order-form-wrap">
-
-    <form class="order-form" id="whatsappForm">
-
-      <div>
-        <input type="text" id="name" placeholder="Your Full Name" required>
-      </div>
-
-      <div>
-        <input type="tel" id="phone" placeholder="Phone Number" required>
-      </div>
-
-      <div class="full">
-        <select id="product" required>
-          <option value="">Select Product</option>
-          <option>Fenugreek Seed</option>
-          <option>Almond Nut</option>
-          <option>Moringa Powder</option>
-          <option>Olive Oil</option>
-          <option>Black Seed Oil</option>
-          <option>Turmeric Powder</option>
-        </select>
-      </div>
-
-      <div>
-        <input type="number" id="quantity" placeholder="Quantity" required>
-      </div>
-
-      <div>
-        <input type="text" id="location" placeholder="Delivery Location" required>
-      </div>
-
-      <div class="full">
-        <textarea id="notes" placeholder="Extra Notes"></textarea>
-      </div>
-
-      <div class="full">
-        <button type="submit" class="order-submit">
-          💬 Send Order to WhatsApp
-        </button>
-      </div>
-
-    </form>
-  </div>
-</section>
-
-<footer>
-  Bee & Aloe · Natural Wellness Products · Ghana © 2025<br><br>
-  📞 Call / WhatsApp: <a href="tel:0531470714" style="color:#F0C96B;text-decoration:none;">0531470714</a>
 </footer>
 
-<a href="https://wa.me/233531470714" class="wa-float">💬</a>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/233000000000" class="wa-float" target="_blank" rel="noopener" title="Order on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
 
 <script>
-const whatsappForm = document.getElementById('whatsappForm');
-
-whatsappForm.addEventListener('submit', function(e){
-  e.preventDefault();
-
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  const product = document.getElementById('product').value;
-  const quantity = document.getElementById('quantity').value;
-  const location = document.getElementById('location').value;
-  const notes = document.getElementById('notes').value;
-
-  const message = `Hello Bee & Aloe!%0A%0A`
-    + `*New Order Request*%0A`
-    + `👤 Name: ${name}%0A`
-    + `📞 Phone: ${phone}%0A`
-    + `🛍 Product: ${product}%0A`
-    + `📦 Quantity: ${quantity}%0A`
-    + `📍 Location: ${location}%0A`
-    + `📝 Notes: ${notes}`;
-
-  const whatsappURL = `https://wa.me/233531470714?text=${message}`;
-
-  window.open(whatsappURL, '_blank');
-});
+function filterCat(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
 </script>
-
 </body>
 </html>
-```
