@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bee & Aloe | Premium Natural Wellness Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8faf8;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    header {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #0f5132;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #c99700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1f2937;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #0f5132;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(15,81,50,0.95), rgba(29,78,216,0.85)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1600&auto=format&fit=crop') center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 80px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 10px 18px;
+      border-radius: 999px;
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 22px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 35px;
+      color: rgba(255,255,255,0.9);
+      max-width: 650px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .btn {
+      padding: 16px 28px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: #facc15;
+      color: #111827;
+      box-shadow: 0 10px 25px rgba(250,204,21,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #fde047;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.4);
+      color: white;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.16);
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title h2 {
+      font-size: 2.7rem;
+      color: #0f172a;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: auto;
+      color: #6b7280;
+      font-size: 1.05rem;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .benefit-card {
+      background: white;
+      padding: 35px 28px;
+      border-radius: 24px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .benefit-card h3 {
+      margin: 18px 0 12px;
+      color: #0f5132;
+    }
+
+    .benefit-card p {
+      color: #6b7280;
+    }
+
+    .emoji {
+      font-size: 2rem;
+    }
+
+    .product-section {
+      background: white;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .product-category {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+    }
+
+    .product-category h3 {
+      margin-bottom: 24px;
+      color: #0f5132;
+      font-size: 1.5rem;
+    }
+
+    .product-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid #f1f5f9;
+      gap: 20px;
+    }
+
+    .product-item:last-child {
+      border-bottom: none;
+    }
+
+    .product-name {
+      font-weight: 600;
+    }
+
+    .product-price {
+      color: #0f5132;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #052e16, #0f5132);
+      color: white;
+      text-align: center;
+      border-radius: 28px;
+      padding: 70px 40px;
+    }
+
+    .cta-section h2 {
+      font-size: 3rem;
+      margin-bottom: 18px;
+    }
+
+    .cta-section p {
+      max-width: 800px;
+      margin: auto auto 35px;
+      color: rgba(255,255,255,0.88);
+      font-size: 1.1rem;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contact-card,
+    .order-form {
+      background: white;
+      border-radius: 24px;
+      padding: 35px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    }
+
+    .contact-card h3,
+    .order-form h3 {
+      margin-bottom: 20px;
+      color: #0f5132;
+      font-size: 1.6rem;
+    }
+
+    .contact-item {
+      margin-bottom: 20px;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #111827;
+    }
+
+    .contact-item a {
+      color: #0f5132;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 15px 18px;
+      border-radius: 14px;
+      border: 1px solid #d1d5db;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .submit-btn {
+      border: none;
+      cursor: pointer;
+      background: #0f5132;
+      color: white;
+      font-size: 1rem;
+      padding: 16px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #166534;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: #020617;
+      color: rgba(255,255,255,0.75);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 1.7rem;
+      color: white;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      color: #facc15;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section-title h2,
+      .cta-section h2 {
+        font-size: 2.2rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Bee <span>&</span> Aloe</div>
+
+        <ul class="nav-links">
+          <li><a href="#products">Products</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#order">Order</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="tag">Premium Natural Wellness & Superfoods</div>
+
+        <h1>Elevate Your Health Naturally With Bee & Aloe</h1>
+
+        <p>
+          Discover premium-quality seeds, nuts, powders, oils, and wellness supplements carefully selected to support energy, immunity, digestion, beauty, and total wellbeing. Trusted by health-conscious customers across Ghana.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#products" class="btn btn-primary">Explore Products</a>
+          <a href="https://wa.me/233531470714" target="_blank" class="btn btn-secondary">Order On WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Customers Choose Bee & Aloe</h2>
+        <p>
+          We combine premium natural ingredients, trusted sourcing, and exceptional customer care to help you achieve a healthier lifestyle.
+        </p>
+      </div>
+
+      <div class="benefits">
+        <div class="benefit-card">
+          <div class="emoji">🌿</div>
+          <h3>Premium Quality</h3>
+          <p>Carefully selected natural products with freshness and purity you can trust.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="emoji">💪</div>
+          <h3>Supports Wellness</h3>
+          <p>Products designed to support energy, immunity, digestion, beauty, and overall health.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="emoji">🚚</div>
+          <h3>Fast Ordering</h3>
+          <p>Easy WhatsApp ordering with responsive customer service and smooth delivery coordination.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="emoji">⭐</div>
+          <h3>Trusted Brand</h3>
+          <p>Customers rely on Bee & Aloe for consistency, authenticity, and premium wellness solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-section" id="products">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Product Collection</h2>
+        <p>
+          Premium natural wellness products, superfoods, supplements, and oils crafted to help you live healthier every day.
+        </p>
+      </div>
+
+      <div class="product-grid">
+
+        <div class="product-category">
+          <h3>Seeds (200g)</h3>
+
+          <div class="product-item"><span class="product-name">Fenugreek Seed</span><span class="product-price">GH₵ 70</span></div>
+          <div class="product-item"><span class="product-name">Akpi Seed</span><span class="product-price">GH₵ 130</span></div>
+          <div class="product-item"><span class="product-name">Sesame Seed</span><span class="product-price">GH₵ 80</span></div>
+          <div class="product-item"><span class="product-name">Flax Seed</span><span class="product-price">GH₵ 80</span></div>
+          <div class="product-item"><span class="product-name">Sunflower Seed</span><span class="product-price">GH₵ 80</span></div>
+          <div class="product-item"><span class="product-name">Pumpkin Seed</span><span class="product-price">GH₵ 90</span></div>
+          <div class="product-item"><span class="product-name">Chia Seed</span><span class="product-price">GH₵ 90</span></div>
+          <div class="product-item"><span class="product-name">Fennel Seed</span><span class="product-price">GH₵ 80</span></div>
+          <div class="product-item"><span class="product-name">Black Seed</span><span class="product-price">GH₵ 80</span></div>
+          <div class="product-item"><span class="product-name">Dried Cranberry</span><span class="product-price">GH₵ 120</span></div>
+        </div>
+
+        <div class="product-category">
+          <h3>Nuts (200g)</h3>
+
+          <div class="product-item"><span class="product-name">Almond Nut</span><span class="product-price">GH₵ 90</span></div>
+          <div class="product-item"><span class="product-name">Walnut</span><span class="product-price">GH₵ 90</span></div>
+          <div class="product-item"><span class="product-name">Cashew Nut</span><span class="product-price">GH₵ 90</span></div>
+
+          <h3 style="margin-top:40px;">Powders</h3>
+
+          <div class="product-item"><span class="product-name">Turmeric Powder (200g)</span><span class="product-price">GH₵ 80</span></div>
+          <div class="product-item"><span class="product-name">Moringa Powder (200g)</span><span class="product-price">GH₵ 80</span></div>
+          <div class="product-item"><span class="product-name">Cinnamon Powder (200g)</span><span class="product-price">GH₵ 90</span></div>
+          <div class="product-item"><span class="product-name">Fenugreek Powder (200g)</span><span class="product-price">GH₵ 80</span></div>
+          <div class="product-item"><span class="product-name">Black Seed Powder (200g)</span><span class="product-price">GH₵ 120</span></div>
+          <div class="product-item"><span class="product-name">Maca Powder (400g)</span><span class="product-price">GH₵ 280</span></div>
+          <div class="product-item"><span class="product-name">Maca Powder (150g)</span><span class="product-price">GH₵ 120</span></div>
+          <div class="product-item"><span class="product-name">Ashwagandha (200g)</span><span class="product-price">GH₵ 140</span></div>
+        </div>
+
+        <div class="product-category">
+          <h3>Oils</h3>
+
+          <div class="product-item"><span class="product-name">Olive Oil (250ml)</span><span class="product-price">GH₵ 120</span></div>
+          <div class="product-item"><span class="product-name">Olive Oil (500ml)</span><span class="product-price">GH₵ 200</span></div>
+          <div class="product-item"><span class="product-name">Olive Oil (100ml)</span><span class="product-price">GH₵ 70</span></div>
+          <div class="product-item"><span class="product-name">Black Seed Oil (60ml)</span><span class="product-price">GH₵ 70</span></div>
+          <div class="product-item"><span class="product-name">Black Seed Oil (250ml)</span><span class="product-price">GH₵ 170</span></div>
+          <div class="product-item"><span class="product-name">Castor Oil (60ml)</span><span class="product-price">GH₵ 70</span></div>
+          <div class="product-item"><span class="product-name">Maca Oil (300ml)</span><span class="product-price">GH₵ 280</span></div>
+
+          <div style="margin-top: 35px; padding: 24px; background: #f0fdf4; border-radius: 18px;">
+            <h4 style="margin-bottom: 10px; color: #0f5132;">More Products Available</h4>
+            <p style="color: #4b5563;">
+              We also stock additional supplements, wellness products, and natural health essentials. Contact us directly for our latest catalog and recommendations.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-section">
+        <h2>Your Wellness Journey Starts Today</h2>
+        <p>
+          Join customers choosing healthier lifestyles with Bee & Aloe’s premium wellness products. Whether you're focused on energy, beauty, fitness, immunity, or overall wellness, we have natural solutions designed for you.
+        </p>
+
+        <a href="https://wa.me/233531470714?text=Hello%20Bee%20%26%20Aloe%2C%20I%20want%20to%20place%20an%20order." target="_blank" class="btn btn-primary">
+          Chat With Us On WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="container">
+      <div class="section-title">
+        <h2>Place Your Order</h2>
+        <p>
+          Fill out the form below and your order request will open directly in WhatsApp for fast confirmation.
+        </p>
+      </div>
+
+      <div class="contact-wrapper">
+
+        <div class="order-form">
+          <h3>Quick Order Form</h3>
+
+          <form id="whatsappForm">
+            <input type="text" id="name" placeholder="Your Full Name" required>
+
+            <input type="tel" id="phone" placeholder="Your Phone Number" required>
+
+            <input type="text" id="location" placeholder="Your Location">
+
+            <textarea id="products" placeholder="List the products and quantities you want to order" required></textarea>
+
+            <button type="submit" class="submit-btn">Send Order To WhatsApp</button>
+          </form>
+        </div>
+
+        <div class="contact-card" id="contact">
+          <h3>Contact & Payment Details</h3>
+
+          <div class="contact-item">
+            <strong>Phone Number</strong>
+            <a href="tel:0531470714">0531470714</a>
+          </div>
+
+          <div class="contact-item">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/233531470714" target="_blank">Chat on WhatsApp</a>
+          </div>
+
+          <div class="contact-item">
+            <strong>Mobile Money</strong>
+            <p>0531470714</p>
+          </div>
+
+          <div class="contact-item">
+            <strong>MoMo Name</strong>
+            <p>Asiamah Koreh</p>
+          </div>
+
+          <div class="contact-item">
+            <strong>Business Promise</strong>
+            <p>
+              We are committed to delivering premium natural wellness products with excellent customer support and trusted service.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-logo">Bee <span class="highlight">&</span> Aloe</div>
+      <p>Premium Natural Wellness Products • Seeds • Nuts • Oils • Supplements</p>
+      <p style="margin-top: 12px;">© 2026 Bee & Aloe. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const location = document.getElementById('location').value;
+      const products = document.getElementById('products').value;
+
+      const message = `Hello Bee & Aloe,%0A%0AI want to place an order.%0A%0AName: ${name}%0APhone: ${phone}%0ALocation: ${location}%0A%0AProducts:%0A${products}`;
+
+      window.open(`https://wa.me/233531470714?text=${message}`, '_blank');
+    });
+  </script>
+
+</body>
+</html>
